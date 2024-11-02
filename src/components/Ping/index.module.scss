@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  position: relative;
+  border-radius: 40px;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+}
+
+.ping {
+  position: absolute;
+  width: fit-content;
+  background-color: white;
+  border-radius: 40px;
+  width: 3.75rem;
+  height: 3.75rem;
+  opacity: 0.75;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
