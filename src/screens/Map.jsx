@@ -7,7 +7,7 @@ import { polygonArray } from "../constants/polygonArray";
 
 export default function Map({ setIsOpen }) {
   return (
-    <div className="absolute top-0 left-0 h-screen w-screen">
+    <div className="absolute top-0 left-0 w-screen h-screen">
       <img
         src={vector_map_bg}
         alt=""
@@ -19,6 +19,7 @@ export default function Map({ setIsOpen }) {
           <Polygon
             name={polygon.name}
             points={polygon.points}
+            label={polygon.label}
             setIsOpen={setIsOpen}
           />
         </>

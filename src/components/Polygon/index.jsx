@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./index.module.scss";
+import Ping from "../Ping";
 
 export default function Polygon(props) {
   return (
@@ -23,6 +24,25 @@ export default function Polygon(props) {
         vectorEffect="non-scaling-stroke"
         className={styles["polygon"]}
       />
+      <text
+        x={props.label.x}
+        y={props.label.y}
+        text-anchor="middle"
+        fill="inherit"
+        font-size="30"
+        className={styles["text"]}
+      >
+        {props.name}
+      </text>
+      <foreignObject
+        x={props.label.x - 80}
+        y={props.label.y - 80}
+        width="160"
+        height="160"
+        className={styles["foreign-object"]}
+      >
+        <Ping />
+      </foreignObject>
     </svg>
   );
 }

@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
+  height: 100%;
 }
 
 .dot {
@@ -10,6 +12,8 @@
   width: 18px;
   height: 18px;
   background-color: white;
+  border: 1px solid black;
+  // animation: dot 1s cubic-bezier(0, 0, 1, .9) infinite;
 }
 
 .ping {
@@ -20,13 +24,21 @@
   width: 3.75rem;
   height: 3.75rem;
   opacity: 0.75;
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: ping 1s cubic-bezier(0, 0, 1, .9) infinite;
 }
 
 @keyframes ping {
   75%,
   100% {
-    transform: scale(2);
+    transform: scale(3);
     opacity: 0;
   }
 }
+
+
+// @keyframes dot {
+//   75%,
+//   100% {
+//     opacity: 0.5;
+//   }
+// }

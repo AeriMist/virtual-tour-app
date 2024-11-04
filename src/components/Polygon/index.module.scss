@@ -1,10 +1,35 @@
 .polygon {
-  stroke-width: 15px;
+  stroke-width: 8px;
   stroke: transparent;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   pointer-events: auto;
 
   &:hover {
     stroke: white;
+    fill: rgba(0, 0, 0, 0.5);
+
+    // Targeting nested text and foreign-object directly within the SVG on hover
+    ~ .text {
+      opacity: 1;
+    }
+
+    ~ .foreign-object {
+      opacity: 0;
+    }
   }
 }
+
+.text {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  fill: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.foreign-object {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
