@@ -9,12 +9,23 @@ import {
   faVrCardboard,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Controls() {
+export default function Controls({ audio }) {
   const [isMute, setIsMute] = useState(false);
 
+  const handleMute = () => {
+    setIsMute((prev) => {
+      if (prev) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+      return !prev;
+    });
+  };
+
   return (
-    <div className="absolute top-4 right-4 flex justify-center items-center gap-8 z-10">
-      <div className={styles["icon"]} onClick={() => setIsMute(!isMute)}>
+    <div className="absolute z-10 flex items-center justify-center gap-8 top-4 right-4">
+      <div className={styles["icon"]} onClick={handleMute}>
         <FontAwesomeIcon
           icon={isMute ? faVolumeXmark : faVolumeHigh}
           style={{ fontSize: "24px", cursor: "pointer" }}
