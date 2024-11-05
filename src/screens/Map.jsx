@@ -1,5 +1,5 @@
 import React from "react";
-
+import styles from "./index.module.scss";
 import vector_map_bg from "../../public/vector-map-bg.jpg";
 
 import Polygon from "../components/Polygon";
@@ -8,12 +8,9 @@ import { polygonArray } from "../constants/polygonArray";
 export default function Map({ setIsOpen }) {
   return (
     <div className="absolute top-0 left-0 w-screen h-screen">
-      <img
-        src={vector_map_bg}
-        alt=""
-        className="w-screen h-screen"
-        useMap="#image-map"
-      />
+      <div className={styles["container"]}>
+        <img src={vector_map_bg} alt="" useMap="#image-map" />
+      </div>
       {polygonArray.map((polygon) => (
         <>
           <Polygon

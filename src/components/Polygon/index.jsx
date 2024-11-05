@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./index.module.scss";
 import Ping from "../Ping";
+import Tooltip from "../Tooltip";
 
 export default function Polygon(props) {
   return (
@@ -24,16 +25,15 @@ export default function Polygon(props) {
         vectorEffect="non-scaling-stroke"
         className={styles["polygon"]}
       />
-      <text
-        x={props.label.x}
-        y={props.label.y}
-        text-anchor="middle"
-        fill="inherit"
-        font-size="30"
+      <foreignObject
+        x={props.label.x - 80}
+        y={props.label.y - 80}
+        width="180"
+        height="160"
         className={styles["text"]}
       >
-        {props.name}
-      </text>
+        <Tooltip name={props.name} />
+      </foreignObject>
       <foreignObject
         x={props.label.x - 80}
         y={props.label.y - 80}
