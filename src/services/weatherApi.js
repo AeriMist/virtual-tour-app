@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const API_KEY = "633194e51a95fe9b110a9a264feca45d";
+const API_KEY = "BLj60TTKFRKPhlJLihAAKkrayzq1zEJF";
 
 const fetchWeather = async ({ city }) => {
   try {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
+      `https://api.tomorrow.io/v4/weather/forecast?location=${city}&timesteps=daily&units=metric&apikey=${API_KEY}`
     );
-    return response.data;
+    return response.data.timelines.daily[0];
   } catch (error) {
     console.error(error);
   }
