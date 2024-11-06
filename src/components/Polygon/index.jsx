@@ -15,7 +15,8 @@ export default function Polygon(props) {
         left: 0,
         pointerEvents: "none", // Make the whole SVG non-interactive
       }}
-      onClick={() => props.setIsOpen(true)}
+      // onClick={() => props.setIsOpen(true)}
+      onClick={() => props.setIsViewing(true)}
     >
       <polygon
         points={props.points}
