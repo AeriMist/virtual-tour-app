@@ -43,7 +43,7 @@ export default function Tour({ state, setIsViewing, audio, link }) {
         allow="xr-spatial-tracking; gyroscope; accelerometer"
         allowfullscreen
         scrolling="no"
-        src={`https://kuula.co/share/${link}/collection/7ZH7J?logo=-1&info=0&fs=0&vr=0&sd=1&thumbs=2&inst=0`}
+        src={`https://kuula.co/share/${link}/collection/7ZH7J?logo=-1&info=0&fs=0&vr=0&sd=1&autorotate=0.3&thumbs=2&inst=0`}
       ></iframe>
     </div>
   );
