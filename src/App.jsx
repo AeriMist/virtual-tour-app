@@ -5,14 +5,15 @@ import Tour from "./screens/Tour";
 import Controls from "./components/Controls";
 import DrawerMenu from "./components/Drawer";
 import Overlay from "./components/Overlay";
-import logo from "../public/logo.png";
+import logo from "/logo.png";
 import Weather from "./components/Weather";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isStarted, setIsStarted] = useState(true);
-  const [audio] = useState(new Audio("../public/mangroves_audio.mp3"));
+  const [audio] = useState(new Audio("/mangroves_audio.mp3"));
   const [isViewing, setIsViewing] = useState(false);
+  const [link, setLink] = useState("");
 
   const duration = 300;
 
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <div className="overflow-hidden">
-      <Transition in={isViewing} timeout={duration}>
+      <Transition in={isViewing} timeout={isViewing ? duration : duration * 3}>
         {(state) => (
           <div
             className="relative w-screen h-screen"
@@ -43,10 +44,10 @@ function App() {
             {isStarted && <Overlay setIsStarted={setIsStarted} audio={audio} />}
             <img
               src={logo}
-              alt=""
+              alt="logo"
               className="w-48 h-48 absolute bottom-0 left-2 z-10"
             />
-            <Map setIsOpen={setIsOpen} setIsViewing={setIsViewing} />
+            <Map setIsViewing={setIsViewing} setLink={setLink} />
             <Controls audio={audio} />
             <DrawerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
             <Weather />
@@ -54,8 +55,15 @@ function App() {
         )}
       </Transition>
 
-      <Transition in={isViewing} timeout={duration}>
-        {(state) => <Tour state={state} setIsViewing={setIsViewing} />}
+      <Transition in={isViewing} timeout={isViewing ? duration * 3 : duration}>
+        {(state) => (
+          <Tour
+            state={state}
+            setIsViewing={setIsViewing}
+            audio={audio}
+            link={link}
+          />
+        )}
       </Transition>
     </div>
   );

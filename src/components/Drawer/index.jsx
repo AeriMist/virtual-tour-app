@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./index.module.scss";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
-import vector_map_bg from "../../../public/vector-map-bg.jpg";
+import vector_map_bg from "/vector-map-bg.jpg";
 
 export default function DrawerMenu({ isOpen, setIsOpen }) {
   return (

@@ -6,7 +6,7 @@ export const polygonArray = [
       x: 869.744,
       y: 616.296,
     },
-    link: "https://kuula.co/share/collection/7PmdK?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1",
+    link: "h51K7",
   },
   {
     name: "200",
@@ -15,7 +15,7 @@ export const polygonArray = [
       x: 1017.44,
       y: 506.895,
     },
-    link: "https://kuula.co/share/collection/7PmdK?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1",
+    link: "h51Sm",
   },
   {
     name: "300",
@@ -24,6 +24,6 @@ export const polygonArray = [
       x: 849.687,
       y: 359.202,
     },
-    link: "https://kuula.co/share/collection/7PmdK?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1",
+    link: "h5DNs",
   },
 ];

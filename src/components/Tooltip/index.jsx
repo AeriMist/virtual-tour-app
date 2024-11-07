@@ -1,5 +1,5 @@
 import React from "react";
-import sourceImg from "../../../public/vector-map-bg.jpg";
+import sourceImg from "/vector-map-bg.jpg";
 
 export default function Tooltip({ name }) {
   return (

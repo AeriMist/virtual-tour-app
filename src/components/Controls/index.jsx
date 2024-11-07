@@ -47,7 +47,7 @@ export default function Controls({ audio }) {
   };
 
   return (
-    <div className="absolute z-10 flex items-center justify-center gap-8 top-4 right-4">
+    <div className="absolute z-10 flex items-center justify-center gap-8 top-8 right-8">
       {/* Flash overlay */}
       {isFlashing && <div className={styles["flash-overlay"]} />}
 

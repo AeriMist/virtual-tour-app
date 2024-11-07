@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.scss";
-import gpsIcon from "../../../public/gps.png";
+import gpsIcon from "/gps.png";
 
 export default function Ping() {
   return (

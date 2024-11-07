@@ -1,23 +1,24 @@
 import React from "react";
-import mapBg from "../../../public/vector-map-bg.jpg";
+import mapBg from "/vector-map-bg.jpg";
+import Controls from "../../components/Controls";
 
-export default function Tour({ state, setIsViewing }) {
+export default function Tour({ state, setIsViewing, audio, link }) {
   const defaultStyle = {
     transition: `opacity 1000ms ease-in-out, transform 1000ms ease-in-out`,
     opacity: 0,
-    transform: "scale(0.1)",
+    transform: "scale(5)",
   };
 
   const transitionStyles = {
-    entering: { opacity: 0, transform: "scale(0.1)" },
+    entering: { opacity: 0, transform: "scale(5)" },
     entered: { opacity: 1, transform: "scale(1)" },
     exiting: { opacity: 1, transform: "scale(1)" },
-    exited: { opacity: 0, transform: "scale(0.1)" },
+    exited: { opacity: 0, transform: "scale(5)" },
   };
 
   return (
     <div
-      className="absolute top-0 left-0 w-screen h-screen z-50"
+      className="absolute top-0 left-0 w-screen h-screen z-50 overflow-hidden"
       style={{
         ...defaultStyle,
         ...transitionStyles[state],
@@ -34,6 +35,7 @@ export default function Tour({ state, setIsViewing }) {
           Back to map
         </p>
       </div>
+      <Controls audio={audio} />
       <iframe
         width="100%"
         height="100%"
@@ -41,7 +43,7 @@ export default function Tour({ state, setIsViewing }) {
         allow="xr-spatial-tracking; gyroscope; accelerometer"
         allowfullscreen
         scrolling="no"
-        src="https://kuula.co/share/h7Fjf?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+        src={`https://kuula.co/share/${link}/collection/7ZH7J?logo=-1&info=0&fs=0&vr=0&sd=1&thumbs=2&inst=0`}
       ></iframe>
     </div>
   );
