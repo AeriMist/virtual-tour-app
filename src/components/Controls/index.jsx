@@ -8,6 +8,7 @@ import {
   faVolumeXmark,
   faExpand,
   faCamera,
+  faMap,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Controls({ audio }) {
@@ -46,6 +47,10 @@ export default function Controls({ audio }) {
     downloadjs(dataURL, "snapshot.png", "image/png");
   };
 
+  const handleGoToMaps = () => {
+    window.open("https://maps.app.goo.gl/PZhoqMUxuir3VNN89", "_blank");
+  };
+
   return (
     <div className="absolute z-10 flex items-center justify-center gap-8 top-8 right-8">
       {/* Flash overlay */}
@@ -54,22 +59,29 @@ export default function Controls({ audio }) {
       <div className={styles["icon"]} onClick={handleMute}>
         <FontAwesomeIcon
           icon={isMute ? faVolumeXmark : faVolumeHigh}
-          style={{ fontSize: "24px", cursor: "pointer" }}
-          color="white"
+          style={{ fontSize: "18px", cursor: "pointer" }}
+          color="black"
         />
       </div>
       <div className={styles["icon"]} onClick={toggleFullscreen}>
         <FontAwesomeIcon
           icon={faExpand}
-          style={{ fontSize: "24px", cursor: "pointer" }}
-          color="white"
+          style={{ fontSize: "18px", cursor: "pointer" }}
+          color="black"
         />
       </div>
       <div className={styles["icon"]} onClick={handleCaptureClick}>
         <FontAwesomeIcon
           icon={faCamera}
-          style={{ fontSize: "24px", cursor: "pointer" }}
-          color="white"
+          style={{ fontSize: "18px", cursor: "pointer" }}
+          color="black"
+        />
+      </div>
+      <div className={styles["icon"]} onClick={handleGoToMaps}>
+        <FontAwesomeIcon
+          icon={faMap}
+          style={{ fontSize: "18px", cursor: "pointer" }}
+          color="black"
         />
       </div>
     </div>

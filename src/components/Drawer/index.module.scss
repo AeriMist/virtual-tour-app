@@ -2,7 +2,6 @@
   position: absolute;
   right: 16px;
   top: 16px;
-  border: 3px solid red;
   border-radius: 6px;
   padding: 8px;
   transition: all 0.2s ease-in-out;
@@ -10,4 +9,8 @@
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

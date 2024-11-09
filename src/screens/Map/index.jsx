@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.scss";
-import vector_map_bg from "/vector-map-bg.jpg";
+import vector_map_bg from "/bakhawan-map.png";
 
 import Polygon from "../../components/Polygon";
 import { polygonArray } from "../../constants/polygonArray";
