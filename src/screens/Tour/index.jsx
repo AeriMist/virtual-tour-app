@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import mapBg from "/bakhawan-map.png";
 import Controls from "../../components/Controls";
 import DrawerMenu from "../../components/Drawer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function Tour({ state, setIsViewing, audio, link }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +36,11 @@ export default function Tour({ state, setIsViewing, audio, link }) {
       >
         <img src={mapBg} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <p className="absolute top-1/2 left-1/2 right-1/2 text-white text-sm -translate-y-[50%] -translate-x-[50%] w-full text-center">
-          Back to map
-        </p>
+        <img
+          src="/Back.png"
+          alt=""
+          className="absolute top-1/2 left-1/2 right-1/2 -translate-y-[50%] -translate-x-[50%] w-full text-center"
+        />
       </div>
       <Controls audio={audio} />
       <iframe
@@ -48,13 +52,13 @@ export default function Tour({ state, setIsViewing, audio, link }) {
         scrolling="no"
         src={`https://kuula.co/share/${link}/collection/7ZH7J?logo=-1&info=0&fs=0&vr=0&sd=1&autorotate=0.3&thumbs=2&inst=0`}
       ></iframe>
-      <div
-        className="bg-white px-4 cursor-pointer rounded-md z-1 absolute top-[50%] right-0 transform -rotate-90 translate-y-[-100%] origin-bottom-left"
-        style={{ transformOrigin: "right bottom" }}
+      <FontAwesomeIcon
+        icon={faCircleChevronLeft}
+        style={{ fontSize: "32px", cursor: "pointer" }}
+        color="white"
+        className="cursor-pointer rounded-md z-1 absolute top-[50%] right-2"
         onClick={() => setIsOpen(true)}
-      >
-        <p className="text-lg font-semibold">More Info</p>
-      </div>
+      />
 
       <DrawerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>

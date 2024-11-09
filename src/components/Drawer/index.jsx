@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,13 +9,11 @@ import FeedbackModal from "../FeedbackModal";
 
 import vector_map_bg from "/bakhawan-map.png";
 import dyk from "/dyk.webp";
-import { Button } from "@mui/material";
 import logo from "/logo.png";
 import bakhawanText from "/bakhawan-text.png";
 
 export default function DrawerMenu({ isOpen, setIsOpen }) {
   const carouselRef = useRef(null);
-  const [openModal, setOpenModal] = useState(false);
 
   //rnadomizer for facts
   const randomIndex = Math.floor(Math.random() * bakhawanFacts.length);
@@ -52,6 +50,29 @@ export default function DrawerMenu({ isOpen, setIsOpen }) {
       carousel.classList.remove(styles["dragging"]);
     }
   };
+
+  const images = [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+  ];
 
   return (
     <div>
@@ -114,18 +135,26 @@ export default function DrawerMenu({ isOpen, setIsOpen }) {
                 What you might see ?
               </p>
               <div
-                className={`flex w-[130%] overflow-auto gap-8 p-2 ${styles["no-scrollbar"]}`}
+                className={`flex w-[130%] overflow-auto gap-8 p-2 ${styles["no-scrollbar"]} `}
                 ref={carouselRef}
                 onMouseDown={startDrag}
                 onMouseMove={onDrag}
                 onMouseUp={stopDrag}
                 onMouseLeave={stopDrag}
               >
-                {Array.from({ length: 10 }, (v, i) => i).map((item) => (
-                  <div className="flex flex-col items-center " key={item}>
-                    <div className="w-24 h-24 border-2 border-red-600 rounded-lg"></div>
-                  </div>
-                ))}
+                {Array.from({ length: images.length }, (v, i) => i).map(
+                  (item) => (
+                    <div className="flex flex-col items-center " key={item}>
+                      <div className="w-24 h-24 rounded-lg ">
+                        <img
+                          src={`/gallery/${images[item]}.jpg`}
+                          alt=""
+                          className="w-full h-full rounded-lg "
+                        />
+                      </div>
+                    </div>
+                  )
+                )}
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import ReactGA from "react-ga4";
 import { Transition } from "react-transition-group";
-import CircularProgress from "@mui/material/CircularProgress";
 import Map from "./screens/Map";
 import Tour from "./screens/Tour";
 import Controls from "./components/Controls";
@@ -17,6 +17,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const duration = 300;
+  const TRACKING_ID = "G-SXSPK0XMB1";
 
   const defaultStyle = {
     transition: `opacity 1000ms ease-in-out, transform 1000ms ease-in-out`,
@@ -32,6 +33,12 @@ function App() {
   };
 
   useEffect(() => {
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname,
+      title: "pageview",
+    });
     setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -59,11 +66,7 @@ function App() {
               }}
             ></div>
 
-            <img src="/bakhawan-text.png" alt="" className="w-80 z-10" />
-            <CircularProgress
-              size="50px"
-              style={{ color: "white", zIndex: 10 }}
-            />
+            <img src="/Loading.png" alt="" className="w-96 z-10" />
           </div>
         </>
       ) : (
