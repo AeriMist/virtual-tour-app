@@ -33,7 +33,7 @@ export default function Weather() {
       {weatherData ? (
         <>
           <div className=" p-2 flex flex-col gap-3 text-white rounded-xl">
-            <p className="text-5xl">
+            <p className="text-5xl font-sour-gummy">
               {weatherData.values.temperatureApparentAvg.toFixed(1)}&deg;C
             </p>
             <p className="font-sour-gummy">Bakhawan Eco Park</p>
