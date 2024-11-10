@@ -14,19 +14,19 @@ export default function Weather() {
     });
   };
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetchWeather({ city: "aklan" });
-  //       setWeatherData(response);
-  //       console.log("Weather Data:", response);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchWeather({ city: "aklan" });
+        setWeatherData(response);
+        console.log("Weather Data:", response);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
   return (
     <div className=" absolute top-4 left-4 flex justify-center items-start gap-2">
