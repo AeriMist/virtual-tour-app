@@ -5,7 +5,7 @@ import DrawerMenu from "../../components/Drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
-export default function Tour({ state, setIsViewing, audio, link }) {
+export default function Tour({ state, setIsViewing, audio, location }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const defaultStyle = {
@@ -44,13 +44,14 @@ export default function Tour({ state, setIsViewing, audio, link }) {
       </div>
       <Controls audio={audio} />
       <iframe
+        id="kuula"
         width="100%"
         height="100%"
         frameborder="0"
         allow="xr-spatial-tracking; gyroscope; accelerometer"
         allowfullscreen
         scrolling="no"
-        src={`https://kuula.co/share/${link}/collection/7ZH7J?logo=-1&info=0&fs=0&vr=0&sd=1&autorotate=0.3&thumbs=2&inst=0`}
+        src={`https://kuula.co/share/${location.link}/collection/7ZH7J?logo=-1&info=0&fs=0&vr=0&zoom=1&sd=1&autorotate=0.16&thumbs=2&inst=0`}
       ></iframe>
       <FontAwesomeIcon
         icon={faCircleChevronLeft}
@@ -60,7 +61,7 @@ export default function Tour({ state, setIsViewing, audio, link }) {
         onClick={() => setIsOpen(true)}
       />
 
-      <DrawerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <DrawerMenu isOpen={isOpen} setIsOpen={setIsOpen} location={location} />
     </div>
   );
 }

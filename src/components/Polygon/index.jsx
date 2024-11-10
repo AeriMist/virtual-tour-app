@@ -18,7 +18,7 @@ export default function Polygon(props) {
       }}
       onClick={() => {
         props.setIsViewing(true);
-        props.setLink(props.polygon.link);
+        props.setLocation(props.polygon);
       }}
     >
       <polygon

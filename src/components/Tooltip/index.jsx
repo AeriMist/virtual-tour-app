@@ -1,5 +1,4 @@
 import React from "react";
-import sourceImg from "/bakhawan-map.png";
 
 export default function Tooltip({ name }) {
   return (

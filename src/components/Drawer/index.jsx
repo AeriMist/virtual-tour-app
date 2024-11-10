@@ -6,13 +6,14 @@ import styles from "./index.module.scss";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { bakhawanFacts } from "../../constants/facts";
 import FeedbackModal from "../FeedbackModal";
+import GalleryModal from "../GalleryModal";
 
 import vector_map_bg from "/bakhawan-map.png";
 import dyk from "/dyk.webp";
 import logo from "/logo.png";
 import bakhawanText from "/bakhawan-text.png";
 
-export default function DrawerMenu({ isOpen, setIsOpen }) {
+export default function DrawerMenu({ isOpen, setIsOpen, location }) {
   const carouselRef = useRef(null);
 
   //rnadomizer for facts
@@ -118,7 +119,7 @@ export default function DrawerMenu({ isOpen, setIsOpen }) {
                   You are now at
                 </p>
                 <p className="text-4xl italic font-bold font-sour-gummy">
-                  100m
+                  {location.name}
                 </p>
               </div>
             </div>
@@ -136,7 +137,7 @@ export default function DrawerMenu({ isOpen, setIsOpen }) {
             </div>
             <div className="flex flex-col items-center justify-center w-full gap-2">
               <p className="text-xs font-semibold italic font-sour-gummy">
-                What you might see ?
+                Photos of Bakhawan Eco Park
               </p>
               <div
                 className={`flex w-[130%] overflow-auto gap-8 p-2 ${styles["no-scrollbar"]} `}
@@ -150,11 +151,12 @@ export default function DrawerMenu({ isOpen, setIsOpen }) {
                   (item) => (
                     <div className="flex flex-col items-center " key={item}>
                       <div className="w-24 h-24 rounded-lg border-2 border-[#f5d36c]">
-                        <img
+                        {/* <img
                           src={`/gallery/${images[item]}.jpg`}
                           alt=""
                           className="w-full h-full rounded-lg "
-                        />
+                        /> */}
+                        <GalleryModal image={images[item]} />
                       </div>
                     </div>
                   )

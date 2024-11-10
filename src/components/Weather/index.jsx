@@ -44,24 +44,26 @@ export default function Weather() {
           </div>
           <div className=" grid grid-cols-2 mt-1">
             <div className="p-2 flex flex-col text-white rounded-xl">
-              <p className="text-[10px]">Humidity</p>
-              <p className="font-semibold">{weatherData.values.humidityAvg}%</p>
+              <p className="text-[10px] font-sour-gummy">Humidity</p>
+              <p className="font-semibold font-sour-gummy">
+                {weatherData.values.humidityAvg}%
+              </p>
             </div>
             <div className="p-2 flex flex-col text-white rounded-xl">
-              <p className="text-[10px]">Wind</p>
-              <p className="font-semibold">
+              <p className="text-[10px] font-sour-gummy">Wind</p>
+              <p className="font-semibold font-sour-gummy">
                 {weatherData.values.windSpeedAvg}m/s
               </p>
             </div>
             <div className="p-2 flex flex-col text-white rounded-xl">
-              <p className="text-[10px]">Sunrise</p>
-              <p className="font-semibold">
+              <p className="text-[10px] font-sour-gummy">Sunrise</p>
+              <p className="font-semibold font-sour-gummy">
                 {getTimeOnly(weatherData.values.sunriseTime)}
               </p>
             </div>
             <div className="p-2 flex flex-col text-white rounded-xl">
-              <p className="text-[10px]">Sunset</p>
-              <p className="font-semibold">
+              <p className="text-[10px] font-sour-gummy">Sunset</p>
+              <p className="font-semibold font-sour-gummy">
                 {getTimeOnly(weatherData.values.sunsetTime)}
               </p>
             </div>
@@ -82,25 +84,25 @@ export default function Weather() {
           <div className=" grid grid-cols-2 mt-1">
             <div className="p-2 flex flex-col text-white rounded-xl">
               <p className="text-[10px] font-sour-gummy">Humidity</p>
-              <p className="font-semibold">
+              <p className="font-semibold ">
                 <Loader />
               </p>
             </div>
             <div className="p-2 flex flex-col text-white rounded-xl">
               <p className="text-[10px] font-sour-gummy">Wind</p>
-              <p className="font-semibold">
+              <p className="font-semibold ">
                 <Loader />
               </p>
             </div>
             <div className="p-2 flex flex-col text-white rounded-xl">
               <p className="text-[10px] font-sour-gummy">Sunrise</p>
-              <p className="font-semibold">
+              <p className="font-semibold ">
                 <Loader />
               </p>
             </div>
             <div className="p-2 flex flex-col text-white rounded-xl">
               <p className="text-[10px] font-sour-gummy">Sunset</p>
-              <p className="font-semibold">
+              <p className="font-semibold ">
                 <Loader />
               </p>
             </div>

@@ -42,7 +42,14 @@ export default function Controls({ audio }) {
     setIsFlashing(true);
     setTimeout(() => setIsFlashing(false), 300);
 
-    const canvas = await html2canvas(document.body);
+    const canvas = await html2canvas(document.body, {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      windowWidth: window.innerWidth,
+      windowHeight: window.innerHeight,
+      useCORS: true,
+    });
+
     const dataURL = canvas.toDataURL("image/png");
     downloadjs(dataURL, "snapshot.png", "image/png");
   };

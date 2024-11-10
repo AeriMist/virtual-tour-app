@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
 import Map from "./screens/Map";
 import Tour from "./screens/Tour";
@@ -12,8 +12,8 @@ function App() {
   const [isStarted, setIsStarted] = useState(true);
   const [audio] = useState(new Audio("/mangroves_audio.mp3"));
   const [isViewing, setIsViewing] = useState(false);
-  const [link, setLink] = useState("");
   const [loading, setLoading] = useState(true);
+  const [location, setLocation] = useState({});
 
   const duration = 300;
 
@@ -83,9 +83,8 @@ function App() {
                   alt="logo"
                   className="w-40 absolute bottom-0 left-2 z-10"
                 />
-                <Map setIsViewing={setIsViewing} setLink={setLink} />
+                <Map setIsViewing={setIsViewing} setLocation={setLocation} />
                 <Controls audio={audio} />
-                {/* <DrawerMenu isOpen={isOpen} setIsOpen={setIsOpen} /> */}
                 <Weather />
               </div>
             )}
@@ -100,7 +99,7 @@ function App() {
                 state={state}
                 setIsViewing={setIsViewing}
                 audio={audio}
-                link={link}
+                location={location}
               />
             )}
           </Transition>
