@@ -114,8 +114,12 @@ export default function DrawerMenu({ isOpen, setIsOpen }) {
             <div className="flex flex-col items-center justify-center w-full">
               <img src={bakhawanText} alt="" className="w-60" />
               <div className="flex flex-col items-center justify-center w-full">
-                <p className="text-xs italic font-semibold">You are now at</p>
-                <p className="text-4xl italic font-bold">100m</p>
+                <p className="text-xs italic font-semibold font-sour-gummy">
+                  You are now at
+                </p>
+                <p className="text-4xl italic font-bold font-sour-gummy">
+                  100m
+                </p>
               </div>
             </div>
             <div className="flex flex-col items-center justify-center w-full gap-10">
@@ -125,13 +129,13 @@ export default function DrawerMenu({ isOpen, setIsOpen }) {
                   alt=""
                   className="w-24 absolute -top-[10%] -left-[10%]"
                 />
-                <p className="text-sm italic indent-10 text-justify">
+                <p className="text-sm italic indent-10 text-justify font-sour-gummy">
                   {randomFact}
                 </p>
               </div>
             </div>
             <div className="flex flex-col items-center justify-center w-full gap-2">
-              <p className="text-xs font-semibold italic">
+              <p className="text-xs font-semibold italic font-sour-gummy">
                 What you might see ?
               </p>
               <div
@@ -145,7 +149,7 @@ export default function DrawerMenu({ isOpen, setIsOpen }) {
                 {Array.from({ length: images.length }, (v, i) => i).map(
                   (item) => (
                     <div className="flex flex-col items-center " key={item}>
-                      <div className="w-24 h-24 rounded-lg ">
+                      <div className="w-24 h-24 rounded-lg border-2 border-[#f5d36c]">
                         <img
                           src={`/gallery/${images[item]}.jpg`}
                           alt=""

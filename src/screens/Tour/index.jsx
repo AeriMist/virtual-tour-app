@@ -54,9 +54,9 @@ export default function Tour({ state, setIsViewing, audio, link }) {
       ></iframe>
       <FontAwesomeIcon
         icon={faCircleChevronLeft}
-        style={{ fontSize: "32px", cursor: "pointer" }}
-        color="white"
-        className="cursor-pointer rounded-md z-1 absolute top-[50%] right-2"
+        style={{ fontSize: "32px", cursor: "pointer", borderRadius: "50%" }}
+        color="#f5d36c"
+        className="cursor-pointer rounded-md z-1 absolute top-[50%] right-2 border-2 border-white bg-[#8a651b]"
         onClick={() => setIsOpen(true)}
       />
 

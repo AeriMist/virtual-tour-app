@@ -36,7 +36,7 @@ export default function Weather() {
             <p className="text-5xl">
               {weatherData.values.temperatureApparentAvg.toFixed(1)}&deg;C
             </p>
-            <p>Bakhawan Eco Park</p>
+            <p className="font-sour-gummy">Bakhawan Eco Park</p>
             <div className="w-full flex flex-col gap-1">
               <div className="w-full h-[3px] bg-white rounded-full" />
               <div className="w-[80%] h-[3px] bg-white rounded-full" />
@@ -73,7 +73,7 @@ export default function Weather() {
             <p className="text-5xl">
               <Loader />
             </p>
-            <p>Bakhawan Eco Park</p>
+            <p className="font-sour-gummy">Bakhawan Eco Park</p>
             <div className="w-full flex flex-col gap-1">
               <div className="w-full h-[3px] bg-white rounded-full" />
               <div className="w-[80%] h-[3px] bg-white rounded-full" />
@@ -81,25 +81,25 @@ export default function Weather() {
           </div>
           <div className=" grid grid-cols-2 mt-1">
             <div className="p-2 flex flex-col text-white rounded-xl">
-              <p className="text-[10px]">Humidity</p>
+              <p className="text-[10px] font-sour-gummy">Humidity</p>
               <p className="font-semibold">
                 <Loader />
               </p>
             </div>
             <div className="p-2 flex flex-col text-white rounded-xl">
-              <p className="text-[10px]">Wind</p>
+              <p className="text-[10px] font-sour-gummy">Wind</p>
               <p className="font-semibold">
                 <Loader />
               </p>
             </div>
             <div className="p-2 flex flex-col text-white rounded-xl">
-              <p className="text-[10px]">Sunrise</p>
+              <p className="text-[10px] font-sour-gummy">Sunrise</p>
               <p className="font-semibold">
                 <Loader />
               </p>
             </div>
             <div className="p-2 flex flex-col text-white rounded-xl">
-              <p className="text-[10px]">Sunset</p>
+              <p className="text-[10px] font-sour-gummy">Sunset</p>
               <p className="font-semibold">
                 <Loader />
               </p>

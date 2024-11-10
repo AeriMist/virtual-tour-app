@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
   height: 100%;
 }
 
@@ -17,12 +16,10 @@
 }
 
 .gps {
-  position: relative;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   transform: skew(0deg, -20deg);
   animation: bounce 1.5s ease-in-out infinite;
-  z-index: 2;
 }
 
 .ping {
@@ -30,12 +27,11 @@
   width: fit-content;
   background-color: white;
   border-radius: 40px;
-  width: 2rem;
-  height: 2rem;
+  width: 1.2rem;
+  height: 1.2rem;
   opacity: 0.75;
   transform: translate(0%, 90%);
   animation: ping 1.4s cubic-bezier(0, 0, 1, 0.9) infinite;
-  z-index: 1;
 }
 
 @keyframes ping {

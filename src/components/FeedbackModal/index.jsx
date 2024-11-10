@@ -22,7 +22,17 @@ export default function FeedbackModal() {
 
   return (
     <div>
-      <Button variant="contained" size="small" onClick={handleOpen}>
+      <Button
+        variant="contained"
+        size="small"
+        onClick={handleOpen}
+        style={{
+          backgroundColor: "#f5d36c",
+          border: "2px solid white",
+          color: "#8a651b",
+          fontFamily: "'Sour Gummy', sans-serif",
+        }}
+      >
         Send Feedback
       </Button>
 

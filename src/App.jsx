@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import ReactGA from "react-ga4";
 import { Transition } from "react-transition-group";
 import Map from "./screens/Map";
 import Tour from "./screens/Tour";
@@ -17,7 +16,6 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const duration = 300;
-  const TRACKING_ID = "G-SXSPK0XMB1";
 
   const defaultStyle = {
     transition: `opacity 1000ms ease-in-out, transform 1000ms ease-in-out`,
@@ -33,12 +31,6 @@ function App() {
   };
 
   useEffect(() => {
-    ReactGA.initialize(TRACKING_ID);
-    ReactGA.send({
-      hitType: "pageview",
-      page: window.location.pathname,
-      title: "pageview",
-    });
     setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -89,7 +81,7 @@ function App() {
                 <img
                   src={logo}
                   alt="logo"
-                  className="w-60 absolute bottom-0 left-2 z-10"
+                  className="w-40 absolute bottom-0 left-2 z-10"
                 />
                 <Map setIsViewing={setIsViewing} setLink={setLink} />
                 <Controls audio={audio} />

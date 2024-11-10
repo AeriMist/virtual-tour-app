@@ -9,7 +9,7 @@ export default function Polygon(props) {
       key={props.index}
       width="100%"
       height="100%"
-      viewBox="0 0 1920 1080"
+      viewBox="0 0 1358 642"
       style={{
         position: "absolute",
         top: 0,
@@ -32,8 +32,8 @@ export default function Polygon(props) {
       <foreignObject
         x={props.polygon.label.x - 80}
         y={props.polygon.label.y - 80}
-        width="180"
-        height="160"
+        width="120"
+        height="120"
         className={styles["text"]}
       >
         <Tooltip name={props.polygon.name} />
