@@ -77,13 +77,13 @@ export default function Controls({ audio }) {
           color="#8a651b"
         />
       </div>
-      <div className={styles["icon"]} onClick={handleCaptureClick}>
+      {/* <div className={styles["icon"]} onClick={handleCaptureClick}>
         <FontAwesomeIcon
           icon={faCamera}
           style={{ fontSize: "18px", cursor: "pointer" }}
           color="#8a651b"
         />
-      </div>
+      </div> */}
       <div className={styles["icon"]} onClick={handleGoToMaps}>
         <FontAwesomeIcon
           icon={faMap}

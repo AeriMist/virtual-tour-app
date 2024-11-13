@@ -163,10 +163,10 @@ export default function DrawerMenu({ isOpen, setIsOpen, location }) {
                 )}
               </div>
             </div>
-
+            {/* 
             <div className="absolute bottom-4 left-4 rounded-md">
               <FeedbackModal />
-            </div>
+            </div> */}
             <img
               src={logo}
               alt="logo"
