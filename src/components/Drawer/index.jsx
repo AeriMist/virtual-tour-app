@@ -116,7 +116,7 @@ export default function DrawerMenu({ isOpen, setIsOpen, location }) {
               <img src={bakhawanText} alt="" className="w-60" />
               <div className="flex flex-col items-center justify-center w-full">
                 <p className="text-xs italic font-semibold font-sour-gummy">
-                  You are now at
+                  Selected point
                 </p>
                 <p className="text-4xl italic font-bold font-sour-gummy">
                   {location.name}
